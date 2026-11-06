@@ -9,7 +9,7 @@ FROM python:3.11-slim
 WORKDIR /app
 ENV PYTHONUNBUFFERED=1 \
     TZ=Asia/Shanghai \
-    DATABASE_URL=sqlite:////data/radar.db \
+    DB_URL=sqlite:////data/radar.db \
     PORT=8000
 COPY backend/requirements.txt ./backend/requirements.txt
 RUN pip install --no-cache-dir -r backend/requirements.txt
