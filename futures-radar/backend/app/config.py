@@ -1,5 +1,6 @@
 """应用配置。所有项均可用环境变量或 .env 覆盖。"""
 from __future__ import annotations
+from pydantic import Field
 
 import os
 from pathlib import Path
