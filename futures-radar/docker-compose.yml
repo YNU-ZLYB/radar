@@ -1,0 +1,16 @@
+services:
+  radar:
+    build: .
+    image: futures-radar:latest
+    container_name: futures-radar
+    restart: unless-stopped
+    ports:
+      - "80:8000"
+    volumes:
+      - ./data:/data
+    environment:
+      - TZ=Asia/Shanghai
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-}
+      - DEEPSEEK_BASE_URL=https://api.deepseek.com
+      - DEEPSEEK_MODEL=deepseek-chat
+      - ENABLE_SCHEDULER=true

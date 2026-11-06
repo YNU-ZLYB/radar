@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: futures-radar
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /api/v1/health
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: DEEPSEEK_BASE_URL
+        value: https://api.deepseek.com
+      - key: DEEPSEEK_MODEL
+        value: deepseek-chat
+      - key: ENABLE_SCHEDULER
+        value: "true"
+      - key: TZ
+        value: Asia/Shanghai

@@ -1,0 +1,8 @@
+frontend/node_modules
+frontend/dist
+backend/.venv
+backend/data/*
+!backend/data/radar.db
+**/__pycache__
+*.pyc
+.git
