@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     host: str = "0.0.0.0"
     port: int = 8000
 
-    database_url: str = f"sqlite:///{DATA_DIR / 'radar.db'}"
+    database_url: str = Field(default=f"sqlite:///{DATA_DIR / 'radar.db'}", env="DB_URL")
 
     # DeepSeek：留空则使用内置规则引擎（免费模式）
     deepseek_api_key: str = ""
